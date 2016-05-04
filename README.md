@@ -9,4 +9,4 @@ You know Smartphone apps? Good, Blueprints are like apps that extend the Smartph
 To enjoy the power of CTRL+SPACE, the basic version comes with some predefined Blueprints - the Standard Blueprint Library.
 They cover very basic usescases, for example reading a margin value from a CSImage file or create images from it.
 
-A full list of available SBL Blueprints is shown in the [CTRL+SPACE Documentation](https://control-space.projektmotor.de/dokumentation/en/user/what_is_a_blueprint "CTRL+SPACE Documentation").
+A full list of available SBL Blueprints is shown in the [CTRL+SPACE Documentation](http://ctrl-space-ide.com/dokumentation/en/user/what_is_a_blueprint "CTRL+SPACE Documentation").
