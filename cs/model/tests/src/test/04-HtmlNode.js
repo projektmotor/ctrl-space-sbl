@@ -9,7 +9,7 @@ cs.test.addTestCase({
             assertions = cs.test.assertions,
             htmlNode = cs.obj.factory.createHtmlNode();
 
-        assertions.assertNotEquals(htmlNode.getRawNode(), undefined);
+        assertions.assertNotEquals(htmlNode.getRaw(), undefined);
     }
 });
 
@@ -21,6 +21,6 @@ cs.test.addTestCase({
             htmlCode = '<a href="/my/target.html" title="target">my target</a>',
             htmlNode = cs.obj.factory.createHtmlNode(htmlCode);
 
-        assertions.assertNotEquals(htmlNode.getRawNode(), undefined);
+        assertions.assertNotEquals(htmlNode.getRaw(), undefined);
     }
 });

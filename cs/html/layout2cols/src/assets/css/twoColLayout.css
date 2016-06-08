@@ -1,0 +1,22 @@
+#content-wrapper {
+    margin-bottom: 30px;    /* Blueprint: set optional margin to content */
+}
+#content-2cols-left {
+    float: left;
+    width: 120px;           /* Blueprint: set width */
+    margin-right: 30px;     /* Blueprint: set optional margin to next col */
+}
+#content-2cols-right {
+    float: left;
+    width: 850px;           /* Blueprint: set width */
+}
+#header {
+    width: 1000px;          /* Blueprint: set width considering column margins */
+    height: 120px;          /* Blueprint: set height */
+    margin-bottom: 30px;    /* Blueprint: set optional margin */
+}
+#footer {
+    clear: both;
+    width: 1000px;          /* Blueprint: set width considering column margins */
+    height: 40px;           /* Blueprint: set height */
+}

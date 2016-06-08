@@ -4,7 +4,7 @@
  * @todo: request filename
  */
 cs.extend.addAutocompletion({
-    name : 'image',
+    name : '&lt;img&gt; (generates image)',
     scope : 'text/html',
     onSelect : function(completionObject) {},
     onBlur : function() {},

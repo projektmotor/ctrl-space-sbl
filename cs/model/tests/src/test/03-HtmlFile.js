@@ -9,7 +9,7 @@ cs.test.addTestCase({
             assertions = cs.test.assertions,
             htmlFile = cs.obj.factory.createHtmlFile();
 
-        assertions.assertNotEquals(htmlFile.getRawHtmlFile(), undefined);
+        assertions.assertNotEquals(htmlFile.getRaw(), undefined);
     }
 });
 
@@ -20,6 +20,6 @@ cs.test.addTestCase({
             assertions = cs.test.assertions,
             htmlFile = cs.obj.factory.createHtmlFile('../../dataFixtures/index.html');
 
-        assertions.assertNotEquals(htmlFile.getRawHtmlFile(), undefined);
+        assertions.assertNotEquals(htmlFile.getRaw(), undefined);
     }
 });

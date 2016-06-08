@@ -15,11 +15,11 @@ cs.extend.addAutocompletion({
         getSingleLayerLine = function() {
             var layer = layers[0];
 
-            bottom = imageTools.activeImage.height - layer.getBottom();
+            bottom = project.activeImage.height - layer.getBottom();
 
             return {
                 xStart: layer.getHorizontalMiddle(),
-                yStart: imageTools.activeImage.height,
+                yStart: project.activeImage.height,
                 xEnd: layer.getHorizontalMiddle(),
                 yEnd: layer.getBottom(),
                 color: '#ff0000',

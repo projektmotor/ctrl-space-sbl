@@ -9,7 +9,7 @@ cs.test.addTestCase({
             assertions = cs.test.assertions,
             slimLayer = cs.obj.factory.createSlimLayer();
 
-        assertions.assertNotEquals(slimLayer.getRawSlimLayer(), undefined);
+        assertions.assertNotEquals(slimLayer.getRaw(), undefined);
     }
 });
 
@@ -20,7 +20,7 @@ cs.test.addTestCase({
             assertions = cs.test.assertions,
             slimLayer = cs.obj.factory.createSlimLayerByColor('#FFAA00', 100, 100);
 
-        assertions.assertNotEquals(slimLayer.getRawSlimLayer(), undefined);
+        assertions.assertNotEquals(slimLayer.getRaw(), undefined);
     }
 });
 
@@ -31,7 +31,7 @@ cs.test.addTestCase({
             assertions = cs.test.assertions,
             slimLayer = cs.obj.factory.createLayerFromFile('../../dataFixtures/ctrl-space-header.jpg');
 
-        assertions.assertNotEquals(slimLayer.getRawSlimLayer(), undefined);
+        assertions.assertNotEquals(slimLayer.getRaw(), undefined);
     }
 });
 
@@ -42,7 +42,7 @@ cs.test.addTestCase({
             assertions = cs.test.assertions,
             slimLayer = cs.obj.factory.createScaledLayerFrom('../../dataFixtures/ctrl-space-header.jpg', 150, 100);
 
-        assertions.assertNotEquals(slimLayer.getRawSlimLayer(), undefined);
+        assertions.assertNotEquals(slimLayer.getRaw(), undefined);
     }
 });
 
@@ -61,6 +61,6 @@ cs.test.addTestCase({
                 10
             );
 
-        assertions.assertNotEquals(slimLayer.getRawSlimLayer(), undefined);
+        assertions.assertNotEquals(slimLayer.getRaw(), 0);
     }
 });

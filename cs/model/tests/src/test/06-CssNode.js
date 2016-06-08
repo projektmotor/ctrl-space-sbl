@@ -9,7 +9,7 @@ cs.test.addTestCase({
             assertions = cs.test.assertions,
             cssNode = cs.obj.factory.createCssNode();
 
-        assertions.assertNotEquals(cssNode.getRawNode(), undefined);
+        assertions.assertNotEquals(cssNode.getRaw(), undefined);
     }
 });
 
@@ -21,6 +21,6 @@ cs.test.addTestCase({
             cssCode = '.my-selector {font-size: 12em;}',
             cssNode = cs.obj.factory.createCssNode(cssCode);
 
-        assertions.assertNotEquals(cssNode.getRawNode(), undefined);
+        assertions.assertNotEquals(cssNode.getRaw(), undefined);
     }
 });

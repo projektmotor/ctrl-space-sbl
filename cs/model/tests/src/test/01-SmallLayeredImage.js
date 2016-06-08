@@ -9,7 +9,7 @@ cs.test.addTestCase({
             assertions = cs.test.assertions,
             slimage = cs.obj.factory.createSmallLayeredImage();
 
-        assertions.assertNotEquals(slimage.getRawSmallLayeredImage(), undefined);
+        assertions.assertNotEquals(slimage.getRaw(), undefined);
     }
 });
 
@@ -18,10 +18,10 @@ cs.test.addTestCase({
     onRun: function () {
         var
             assertions = cs.test.assertions,
-            slimage = cs.obj.factory.createSmallLayeredImage('../../dataFixtures/ctrlspace_web_blue.slim');
+            slimage = cs.obj.factory.createSmallLayeredImage('../../dataFixtures/ctrl-space-header.jpg');
 
-        assertions.assertNotEquals(slimage.getRawSmallLayeredImage(), undefined);
+        assertions.assertNotEquals(slimage.getRaw(), undefined);
         // @todo: change child count to fixtures child count
-        assertions.assertEquals(slimage.getLayerRoot().getChildren().length, 3);
+        assertions.assertEquals(slimage.getNodeTree().childNodes.length, 3);
     }
 });

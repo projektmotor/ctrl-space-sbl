@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint version="1.0" apidoc="create a basic layout with header, footer and multi-column content.">
+	<import uri="cv.layout.LayoutFrame" as="layoutFrame"/>
+	<import uri="cv.basic.skeleton.Skeleton" as="skeleton"/>
+	
+	<construct>
+		<![CDATA[
+			layout.importName = "layoutFrame";
+			
+			var twoColumnPage = {
+				leftLayer: {},
+				leftCSS: {},
+				leftNode: {},
+				rightLayer: {},
+				rightCSS: {},
+				rightNode: {},
+				contentWrapper: "noWrapper",
+				
+				build: function(){
+					this.buildLayoutFrameIfNeeded();
+					blueprint.call("TwoColsLeft", [this.contentWrapper]);
+					blueprint.call("TwoColsRight", [this.contentWrapper]);
+					this.configureLeft();
+					this.configureRight();
+					console.out("finished building 2col layout");
+				},
+				
+				buildLayoutFrameIfNeeded: function(){
+					this.contentWrapper = document.$("#content-wrapper").get()[0]; 
+					console.out("wrapper: "+this.contentWrapper);
+					if(typeof this.contentWrapper == "undefined"){
+						blueprint.call("layoutFrame.createLayout");
+						this.buildLayoutFrameIfNeeded();//run recursive to see if frame was created
+					}
+					
+				},
+				
+				configureLeft: function(){
+					this.leftCSS = this.makeStyleFor("content-left");
+					this.leftNode.layer = this.leftLayer;
+					this.leftCSS.setProperty("float", 			"left");
+					// dig into the width needs. doesnt work as expected. if enlightend, reinsert it: this.leftCSS.setProperty("width", 			this.leftLayer.width+"px");
+				},
+				
+				configureRight: function(){
+					this.rightCSS = this.makeStyleFor("content-right");
+					this.rightNode.layer = this.rightLayer;
+					this.rightCSS.setProperty("float", 			"left");
+					// dig into the width needs. doesnt work as expected. if enlightend, reinsert it: 	this.rightCSS.setProperty("width", 			this.rightLayer.width+"px");
+					this.leftCSS.setProperty("margin-right", 	this.leftNode.calcSpaceToNodeOnRight()+"px");
+				},
+				
+				makeStyleFor: function(id){
+					var styleCode="#"+id+"{}";
+					return project.insertCSS(styleCode);
+				},
+			};
+		]]>
+	</construct>
+
+	<structure>
+		<assistant accessName="twoColPage" visibleName="Two column content">
+			<step accessName="leftCol" select="layers" message="Select left content layer." />
+			<step accessName="rightCol" select="layers" message="Select right content layer." />
+			<finally>
+				twoColumnPage.leftLayer = assistant.stepData("leftCol")[0];
+				twoColumnPage.rightLayer = assistant.stepData("rightCol")[0];
+				twoColumnPage.build();
+			</finally>
+		</assistant>
+
+		<div id="content-left" build="forward" accessName="TwoColsLeft" visible="false">
+			<exec>
+				twoColumnPage.leftNode=insertedNode;
+			</exec>
+		</div>
+		<div id="content-right" build="forward" accessName="TwoColsRight" visible="false">
+			<exec>
+				twoColumnPage.rightNode=insertedNode;
+			</exec>
+		</div>
+	</structure>
+</blueprint>
