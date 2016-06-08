@@ -1,2 +1,0 @@
-
-io.include("tests.js");
